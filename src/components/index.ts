@@ -1,1 +1,3 @@
-export * from "./Button";
+export * from "./Diagram";
+export * from "./Rectangle";
+

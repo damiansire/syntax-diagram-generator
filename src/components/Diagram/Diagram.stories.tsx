@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import Button from "./Button";
-import { ButtonProps } from "./Button.types";
+import Button from "./Diagram";
+import { ButtonProps } from "./Diagram.types";
 
 const meta: Meta<typeof Button> = {
   component: Button,

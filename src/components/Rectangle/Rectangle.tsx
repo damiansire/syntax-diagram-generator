@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonProps } from "./Button.types";
+import { RectangleProps } from "./Rectangle.types";
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledRectangle = styled.button<RectangleProps>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -34,7 +34,7 @@ const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-const Button: React.FC<ButtonProps> = ({
+const Rectangle: React.FC<RectangleProps> = ({
   size,
   primary,
   disabled,
@@ -43,8 +43,8 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <StyledButton
-      type="button"
+    <StyledRectangle
+      type="Rectangle"
       onClick={onClick}
       primary={primary}
       disabled={disabled}
@@ -52,8 +52,8 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {text}
-    </StyledButton>
+    </StyledRectangle>
   );
 };
 
-export default Button;
+export default Rectangle;
