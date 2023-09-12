@@ -1,9 +1,5 @@
-import { MouseEventHandler } from "react";
-
 export interface RectangleProps {
-    text?: string;
-    primary?: boolean;
-    disabled?: boolean;
-    size?: "small" | "medium" | "large";
-    onClick?: MouseEventHandler<HTMLButtonElement>;
+    width: number;
+    height: number;
+    text: string;
 }

@@ -16,7 +16,7 @@ export const Primary: Story = (args: RectangleProps) => (
   <Rectangle data-testId="InputField-id" {...args} />
 );
 Primary.args = {
-  primary: true,
-  disabled: false,
-  text: "Primary",
+  width: 200,
+  height: 200,
+  text: "Prueba de texto",
 };
