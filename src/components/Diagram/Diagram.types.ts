@@ -1,9 +1,14 @@
-import { MouseEventHandler } from "react";
+export interface Node {
+    id: number;
+    text: string;
+}
 
-export interface ButtonProps {
-    text?: string;
-    primary?: boolean;
-    disabled?: boolean;
-    size?: "small" | "medium" | "large";
-    onClick?: MouseEventHandler<HTMLButtonElement>;
+export interface Edge {
+    from: number,
+    to: number
+}
+
+export interface DiagramProps {
+    nodes: Node[];
+    edges: Edge[];
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { ButtonProps } from "./Diagram.types";
-
-const StyledButton = styled.button<ButtonProps>`
+import { DiagramProps } from "./Diagram.types";
+import { Node } from "./Diagram.types";
+import Rectangle from "../Rectangle/Rectangle";
+const StyledButton = styled.button<DiagramProps>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -11,49 +12,16 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: bold;
   border-radius: 3px;
   display: inline-block;
-  padding: ${(props) =>
-    props.size === "small"
-      ? "7px 25px 8px"
-      : props.size === "medium"
-      ? "9px 30px 11px"
-      : "14px 30px 16px"};
-  color: ${(props) => (props.primary ? "#1b116e" : "#ffffff")};
-  background-color: ${(props) => (props.primary ? "#6bedb5" : "#1b116e")};
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  &:hover {
-    background-color: ${(props) => (props.primary ? "#55bd90" : "#6bedb5")};
-  }
-  &:active {
-    border: solid 2px #1b116e;
-    padding: ${(props) =>
-      props.size === "small"
-        ? "5px 23px 6px"
-        : props.size === "medium"
-        ? "7px 28px 9px"
-        : "12px 28px 14px"};
-  }
 `;
 
-const Button: React.FC<ButtonProps> = ({
-  size,
-  primary,
-  disabled,
-  text,
-  onClick,
-  ...props
-}) => {
+const Diagram: React.FC<DiagramProps> = ({ nodes, edges, ...props }) => {
   return (
-    <StyledButton
-      type="button"
-      onClick={onClick}
-      primary={primary}
-      disabled={disabled}
-      size={size}
-      {...props}
-    >
-      {text}
-    </StyledButton>
+    <div>
+      {nodes.map((node: Node) => (
+        <Rectangle text={node.text} width={100} height={100}></Rectangle>
+      ))}
+    </div>
   );
 };
 
-export default Button;
+export default Diagram;
